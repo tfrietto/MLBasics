@@ -22,7 +22,7 @@ Y = numpy.array(Data[Predict])
 # x_test is used to test our line of best fit
 #       comprised of 10% of data
 # same is true of y_train and y_test
-x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
+x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.05)
 
 
 Linear = linear_model.LinearRegression()
