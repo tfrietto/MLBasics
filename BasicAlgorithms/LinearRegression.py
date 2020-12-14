@@ -60,3 +60,11 @@ Predictions = Linear.predict(x_test)
 # then shows actual G3 value
 for i in range(len(Predictions)):
     print(Predictions[i], x_test[i], y_test[i])
+
+# create grid with G1 as x axis, and G3 as y axis
+p = "G1"
+style.use("ggplot")
+pyplot.scatter(Data[p],Data[Predict])
+pyplot.xlabel(p)
+pyplot.ylabel("Final Grade")
+pyplot.show()
