@@ -25,7 +25,7 @@ Y = numpy.array(Data[Predict])
 # x_test is used to test our line of best fit
 #       comprised of 10% of data
 # same is true of y_train and y_test
-x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.05)
+x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.1)
 
 
 # creates and teaches the model the data
@@ -33,6 +33,7 @@ Linear = linear_model.LinearRegression()
 Linear.fit(x_train, y_train)
 
 # print out accuracy as a percent
+# accuracy is different every run because the declaration of x_train, x_test, etc. chooses random values
 Accuracy = Linear.score(x_test, y_test)
 print("Accuracy", Accuracy, "\n")
 
