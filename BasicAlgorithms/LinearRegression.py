@@ -2,6 +2,9 @@ import numpy
 import pandas
 import sklearn
 from sklearn import linear_model
+import matplotlib.pyplot as pyplot
+import pickle
+from matplotlib import style
 
 # open and parse csv file
 Data = pandas.read_csv("Data_files/student-mat.csv", sep=(";"))
@@ -25,6 +28,7 @@ Y = numpy.array(Data[Predict])
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y, test_size=0.05)
 
 
+# creates and teaches the model the data
 Linear = linear_model.LinearRegression()
 Linear.fit(x_train, y_train)
 
@@ -32,9 +36,18 @@ Linear.fit(x_train, y_train)
 Accuracy = Linear.score(x_test, y_test)
 print("Accuracy", Accuracy, "\n")
 
+# writing pickle file to save model
+with open("studentG3model.pickle", "wb") as f:
+    pickle.dump(Linear, f)
+
+# reading pickle file
+pickle_in = open("studentG3model.pickle", "rb")
+
+# using contents of studentG3model.pickle to assign Linear
+Linear = pickle.load(pickle_in)
+
 # makes an array of predicted G3 values
 Predictions = Linear.predict(x_test)
-
 # loop throught showing what prediction value is based on linear regression
 # then shows the data used in calculation
 # then shows actual G3 value
