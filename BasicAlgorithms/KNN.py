@@ -1,5 +1,4 @@
 import sklearn
-from sklearn.utils import shuffle
 from sklearn.neighbors import KNeighborsClassifier
 import pandas
 import numpy
