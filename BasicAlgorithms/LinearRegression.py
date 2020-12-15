@@ -55,6 +55,7 @@ Linear = pickle.load(pickle_in)
 
 # makes an array of predicted G3 values
 Predictions = Linear.predict(x_test)
+
 # loop throught showing what prediction value is based on linear regression
 # then shows the data used in calculation
 # then shows actual G3 value
