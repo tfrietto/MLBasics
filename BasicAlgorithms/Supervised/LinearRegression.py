@@ -7,7 +7,7 @@ import pickle
 from matplotlib import style
 
 # open and parse csv file
-Data = pandas.read_csv("Data_files/student-mat.csv", sep=(";"))
+Data = pandas.read_csv("../Data_files/student-mat.csv", sep=(";"))
 
 # cut data to include only variables we want
 Data = Data[["G1", "G2", "G3", "studytime", "failures", "absences"]]

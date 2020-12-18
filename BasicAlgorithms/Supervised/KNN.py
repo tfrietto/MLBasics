@@ -5,7 +5,7 @@ import numpy
 from sklearn import linear_model,preprocessing
 
 # opens car.data and copies data into variable Data
-Data = pandas.read_csv("Data_files/car.data")
+Data = pandas.read_csv("../Data_files/car.data")
 
 # convert all the values in safety to numeric values
 # low corresponds to 0, med to 1, and high to 2
